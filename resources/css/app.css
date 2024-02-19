@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #003a70;
+}
+
+/* Atur warna teks dan hover pada menu */
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffd700;
+}
+
+/* Atur tampilan menu aktif */
+.navbar-dark .navbar-nav .active > .nav-link {
+    color: #ffd700;
+    background-color: #001428;
+}
