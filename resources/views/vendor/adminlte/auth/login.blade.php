@@ -79,9 +79,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password">{{ __('Password') }}</label>
+                                <label for="password-admin">{{ __('Password') }}</label>
                                 <input type="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password-admin"
                                     placeholder="Password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -127,9 +127,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="password">{{ __('Password') }}</label>
+                                <label for="password-alumni">{{ __('Password') }}</label>
                                 <input type="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password-alumni"
                                     placeholder="Password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
