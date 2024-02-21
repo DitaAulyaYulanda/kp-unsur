@@ -56,6 +56,56 @@
                 </div>
             </section>
         </div>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="alumniModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nisn">{{ __('NISN') }}</label>
+                                <input name="nisn" value="{{ old('nisn') }}" required autocomplete="nisn" autofocus
+                                    type="text" class="form-control @error('nisn') is-invalid @enderror" id="nisn"
+                                    placeholder="Enter NISN">
+                                @error('nisn')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password-alumni">{{ __('Password') }}</label>
+                                <input type="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password-alumni"
+                                    placeholder="Password">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Login') }}
+                            </button>
+                            @if (Route::has('password.request'))
+                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                            @endif
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <form method="POST" action="{{ route('login') }}">
@@ -104,54 +154,7 @@
 
             </div>
         </div>
-        <div class="modal fade" id="alumniModal" tabindex="-1" aria-labelledby="alumniModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="alumniModalLabel">Login
-                            </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="nisn">{{ __('NISN') }}</label>
-                                <input name="nisn" value="{{ old('nisn') }}" required autocomplete="nisn" autofocus
-                                    type="text" class="form-control @error('nisn') is-invalid @enderror" id="nisn"
-                                    placeholder="Enter NISN">
-                                @error('nisn')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="password-alumni">{{ __('Password') }}</label>
-                                <input type="password" name="password"
-                                    class="form-control @error('password') is-invalid @enderror" id="password-alumni"
-                                    placeholder="Password">
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
-                            </button>
-                            @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                            @endif
-                        </div>
-                </form>
 
-            </div>
-        </div>
 
 
         <script src="{{ asset('js/jquery.min.js') }}"></script>
