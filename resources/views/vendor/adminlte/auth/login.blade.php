@@ -76,8 +76,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">{{ __('Password') }}</label>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                    id="password" placeholder="Password">
+                                <input type="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    placeholder="Password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -99,6 +100,8 @@
 
             </div>
         </div>
+
+
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/popper.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
