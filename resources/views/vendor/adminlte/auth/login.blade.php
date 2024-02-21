@@ -56,13 +56,13 @@
                 </div>
             </section>
         </div>
-        <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="adminModal" tabindex="-1" aria-labelledby="adminModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Login
+                            <h1 class="modal-title fs-5" id="adminModalLabel">Login
                             </h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -104,13 +104,13 @@
 
             </div>
         </div>
-        <div class="modal fade" id="alumniModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="alumniModal" tabindex="-1" aria-labelledby="alumniModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Login
+                            <h1 class="modal-title fs-5" id="alumniModalLabel">Login
                             </h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -119,7 +119,7 @@
                                 <label for="nisn">{{ __('NISN') }}</label>
                                 <input name="nisn" value="{{ old('nisn') }}" required autocomplete="nisn" autofocus
                                     type="text" class="form-control @error('nisn') is-invalid @enderror" id="nisn"
-                                    placeholder="Enter nisn">
+                                    placeholder="Enter NISN">
                                 @error('nisn')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
