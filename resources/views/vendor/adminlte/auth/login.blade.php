@@ -65,8 +65,8 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="email">{{ __('Email') }}</label>
-                                <input value="{{ old('email') }}" required autocomplete="email" autofocus type="email"
-                                    class="form-control @error('email') is-invalid @enderror" id="email"
+                                <input name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                    type="email" class="form-control @error('email') is-invalid @enderror" id="email"
                                     placeholder="Enter email">
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
